@@ -52,7 +52,7 @@ export default function checkForWinner(board) {
     }
 
     // Checking if a player has any vertical wins
-    for (let col = 0; col < board[0].length; col++) {
+    for (let col = 0; col < board.length; col++) {
       let firstCell = board[0][col];
       
       // Skip col with empty first spaces
@@ -61,7 +61,7 @@ export default function checkForWinner(board) {
       }
       
       let isWinningCol = true;
-      for (let row = 1; row < board[col].width; row++) {
+      for (let row = 1; row < board[col].length; row++) {
         if (board[row][col] !== firstCell) {
           isWinningCol = false;
           break;
@@ -74,12 +74,12 @@ export default function checkForWinner(board) {
   }
 
   // // Check if a player has any diagonal wins
-  // if (board[0][0] === board[1][1] === board[2][2]) {
-  //   return board[0][0];
+  // if (board[0][0] === board[1][1] && board [1][1] === board[2][2]) {
+  //   return board[1][1];
   // }
 
-  // if (board[0][2] === board[1][1] === board[2][0]) {
-  //   return board[0][2];
+  // if (board[0][2] === board[1][1] && board[1][1] === board[2][0]) {
+  //   return board[1][1];
   // }
 
 }
